@@ -26,6 +26,30 @@ const FeaturedListings = () => {
       price: '$15,750,000',
       location: 'Luxury Villa',
       image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2070'
+    },
+    {
+      id: 5,
+      price: '$22,500,000',
+      location: 'Beverly Hills Estate',
+      image: 'https://images.unsplash.com/photo-1524230572899-a752b3835840?q=80&w=2070'
+    },
+    {
+      id: 6,
+      price: '$18,900,000',
+      location: 'Malibu Oceanfront',
+      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070'
+    },
+    {
+      id: 7,
+      price: '$12,750,000',
+      location: 'Hollywood Hills',
+      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070'
+    },
+    {
+      id: 8,
+      price: '$9,850,000',
+      location: 'Bel Air Contemporary',
+      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2070'
     }
   ];
 

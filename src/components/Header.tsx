@@ -10,12 +10,12 @@ const Header = () => {
   const navigationItems = [
     { name: 'OUR PROPERTIES', path: '/properties' },
     { name: 'BUYERS', path: '/buyers' },
-    { name: 'SELLERS', path: '#' },
+    { name: 'SELLERS', path: '/sellers' },
     { name: 'OFFICES', path: '#' },
     { name: 'ABOUT US', path: '#' },
     { name: 'PHILANTHROPY', path: '#' },
     { name: 'IN THE MEDIA', path: '#' },
-    { name: 'CONTACT US', path: '#' }
+    { name: 'CONTACT US', path: '/contact' }
   ];
 
   return (
