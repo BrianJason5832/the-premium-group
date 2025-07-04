@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -11,7 +12,7 @@ const AboutUs = () => {
       <section 
         className="relative h-screen flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2070')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=2070')`
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
