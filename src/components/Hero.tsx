@@ -1,7 +1,47 @@
 
 import React from 'react';
 
-const Hero = () => {
+interface HeroProps {
+  selectedLocation?: string;
+  onLocationSelect: (location: string) => void;
+}
+
+const Hero = ({ selectedLocation, onLocationSelect }: HeroProps) => {
+  const getTitle = () => {
+    if (!selectedLocation) {
+      return (
+        <>
+          <h1 className="text-6xl md:text-8xl font-light tracking-[0.2em] text-white mb-4">
+            THE PREMIUM GROUP
+          </h1>
+          <div className="w-32 h-px bg-white mx-auto mb-4"></div>
+          <p className="text-red-500 text-xl font-light tracking-[0.3em]">REAL ESTATE</p>
+        </>
+      );
+    }
+
+    if (selectedLocation === 'LOS ANGELES') {
+      return (
+        <>
+          <h1 className="text-6xl md:text-8xl font-light tracking-[0.2em] text-white mb-4">
+            THE PREMIUM GROUP LOS ANGELES
+          </h1>
+          <div className="w-32 h-px bg-white mx-auto mb-4"></div>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <h1 className="text-6xl md:text-8xl font-light tracking-[0.2em] text-white mb-4">
+          THE PREMIUM GROUP
+        </h1>
+        <div className="w-32 h-px bg-white mx-auto mb-4"></div>
+        <p className="text-red-500 text-xl font-light tracking-[0.3em]">REAL ESTATE {selectedLocation}</p>
+      </>
+    );
+  };
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -22,11 +62,7 @@ const Hero = () => {
               <div className="w-6 h-6 bg-red-500 rounded-full"></div>
             </div>
           </div>
-          <h1 className="text-6xl md:text-8xl font-light tracking-[0.2em] text-white mb-4">
-            THE PREMIUM GROUP
-          </h1>
-          <div className="w-32 h-px bg-white mx-auto mb-4"></div>
-          <p className="text-red-500 text-xl font-light tracking-[0.3em]">REAL ESTATE</p>
+          {getTitle()}
         </div>
 
         {/* Location Buttons */}
@@ -34,9 +70,18 @@ const Hero = () => {
           {['LOS ANGELES', 'NEWPORT BEACH', 'SAN DIEGO', 'CABO'].map((location) => (
             <button
               key={location}
-              className="group relative px-8 py-4 bg-black/50 backdrop-blur-sm border border-white/30 hover:border-red-500 transition-all duration-300"
+              onClick={() => onLocationSelect(location)}
+              className={`group relative px-8 py-4 bg-black/50 backdrop-blur-sm border transition-all duration-300 ${
+                selectedLocation === location 
+                  ? 'border-red-500 bg-red-500/20' 
+                  : 'border-white/30 hover:border-red-500'
+              }`}
             >
-              <span className="text-white text-sm font-light tracking-wider group-hover:text-red-500 transition-colors">
+              <span className={`text-sm font-light tracking-wider transition-colors ${
+                selectedLocation === location 
+                  ? 'text-red-500' 
+                  : 'text-white group-hover:text-red-500'
+              }`}>
                 {location}
               </span>
             </button>
