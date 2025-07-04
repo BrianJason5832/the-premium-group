@@ -34,6 +34,54 @@ const Properties = () => {
       price: '$28,500,000',
       location: '1250 Bel Air Rd.',
       image: 'https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?q=80&w=2070'
+    },
+    {
+      id: 5,
+      price: '$32,750,000',
+      location: 'Beverly Hills Estate',
+      image: 'https://images.unsplash.com/photo-1524230572899-a752b3835840?q=80&w=2070'
+    },
+    {
+      id: 6,
+      price: '$45,900,000',
+      location: 'Malibu Oceanfront',
+      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070'
+    },
+    {
+      id: 7,
+      price: '$21,750,000',
+      location: 'Hollywood Hills Modern',
+      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070'
+    },
+    {
+      id: 8,
+      price: '$18,850,000',
+      location: 'Bel Air Contemporary',
+      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2070'
+    },
+    {
+      id: 9,
+      price: '$55,500,000',
+      location: 'Pacific Palisades Estate',
+      image: 'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=2070'
+    },
+    {
+      id: 10,
+      price: '$67,200,000',
+      location: 'Santa Monica Penthouse',
+      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070'
+    },
+    {
+      id: 11,
+      price: '$43,750,000',
+      location: 'West Hollywood Luxury',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070'
+    },
+    {
+      id: 12,
+      price: '$29,900,000',
+      location: 'Manhattan Beach Villa',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070'
     }
   ];
 
@@ -165,7 +213,7 @@ const Properties = () => {
       {/* Properties Grid */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProperties.map((property) => (
               <div key={property.id} className="group cursor-pointer">
                 <div className="relative overflow-hidden">
@@ -176,7 +224,7 @@ const Properties = () => {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
                   <div className="absolute bottom-6 left-6 text-white">
-                    <p className="text-3xl font-light mb-1">{property.price}</p>
+                    <p className="text-2xl font-light mb-1">{property.price}</p>
                     <p className="text-lg font-light">{property.location}</p>
                   </div>
                 </div>

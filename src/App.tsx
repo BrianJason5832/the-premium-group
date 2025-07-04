@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import Properties from "./pages/Properties";
 import Buyers from "./pages/Buyers";
 import Sellers from "./pages/Sellers";
+import AboutUs from "./pages/AboutUs";
+import Philanthropy from "./pages/Philanthropy";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/properties" element={<Properties />} />
           <Route path="/buyers" element={<Buyers />} />
           <Route path="/sellers" element={<Sellers />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/philanthropy" element={<Philanthropy />} />
           <Route path="/contact" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

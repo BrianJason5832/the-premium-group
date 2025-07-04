@@ -11,10 +11,8 @@ const Header = () => {
     { name: 'OUR PROPERTIES', path: '/properties' },
     { name: 'BUYERS', path: '/buyers' },
     { name: 'SELLERS', path: '/sellers' },
-    { name: 'OFFICES', path: '#' },
-    { name: 'ABOUT US', path: '#' },
-    { name: 'PHILANTHROPY', path: '#' },
-    { name: 'IN THE MEDIA', path: '#' },
+    { name: 'ABOUT US', path: '/about' },
+    { name: 'PHILANTHROPY', path: '/philanthropy' },
     { name: 'CONTACT US', path: '/contact' }
   ];
 
@@ -37,27 +35,17 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navigationItems.map((item) => (
-                item.path.startsWith('#') ? (
-                  <a
-                    key={item.name}
-                    href={item.path}
-                    className="text-white text-xs font-light tracking-wider hover:text-red-500 transition-colors duration-300"
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`text-xs font-light tracking-wider transition-colors duration-300 ${
-                      location.pathname === item.path 
-                        ? 'text-red-500' 
-                        : 'text-white hover:text-red-500'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                )
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-xs font-light tracking-wider transition-colors duration-300 ${
+                    location.pathname === item.path 
+                      ? 'text-red-500' 
+                      : 'text-white hover:text-red-500'
+                  }`}
+                >
+                  {item.name}
+                </Link>
               ))}
             </nav>
 
@@ -77,29 +65,18 @@ const Header = () => {
         <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-sm lg:hidden">
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             {navigationItems.map((item) => (
-              item.path.startsWith('#') ? (
-                <a
-                  key={item.name}
-                  href={item.path}
-                  className="text-white text-lg font-light tracking-wider hover:text-red-500 transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`text-lg font-light tracking-wider transition-colors duration-300 ${
-                    location.pathname === item.path 
-                      ? 'text-red-500' 
-                      : 'text-white hover:text-red-500'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              )
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-lg font-light tracking-wider transition-colors duration-300 ${
+                  location.pathname === item.path 
+                    ? 'text-red-500' 
+                    : 'text-white hover:text-red-500'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
         </div>
@@ -107,7 +84,7 @@ const Header = () => {
 
       {/* Social Media Sidebar */}
       <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:flex flex-col space-y-4">
-        {[Facebook, /* Twitter replaced with X */, Youtube, Linkedin, Instagram].map((Icon, index) => (
+        {[Facebook, Youtube, Linkedin, Instagram].map((Icon, index) => (
           <a
             key={index}
             href="#"
