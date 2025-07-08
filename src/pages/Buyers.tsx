@@ -25,8 +25,15 @@ const Buyers = () => {
               <h2 className="text-6xl text-red-500 font-light italic mb-8">With Us</h2>
             </div>
             
-            {/* Right side - Image placeholder */}
-            <div className="bg-gray-800/50 h-96 rounded-lg"></div>
+            {/* Right side - Real Estate Image */}
+            <div className="relative h-96 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2070"
+                alt="Luxury Real Estate Property"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -42,7 +49,7 @@ const Buyers = () => {
               </p>
               
               <p className="text-lg font-light leading-relaxed">
-                At The Oppenheim Group, we not only have a thorough understanding of the marketplace, we also have access to many properties that are off-market and an awareness of properties that are about to be listed. Most importantly, we are keenly aware of the nuances that determine value and we are discerning as to construction quality, materials, and craftsmanship. We will listen to your needs and find you the perfect home and we will make sure that you make an educated and informed decision. Once you choose a property we will represent your interest voiferously throughout the purchase process, negotiating the best possible purchase price, managing and advocating for you during inspections, escrow, title, and closing. We will also advise you on how to make the house even better, including furniture and design, and possible remodel ideas and augmentations where beneficial.
+                At The Premium Group, we not only have a thorough understanding of the marketplace, we also have access to many properties that are off-market and an awareness of properties that are about to be listed. Most importantly, we are keenly aware of the nuances that determine value and we are discerning as to construction quality, materials, and craftsmanship. We will listen to your needs and find you the perfect home and we will make sure that you make an educated and informed decision. Once you choose a property we will represent your interest voiferously throughout the purchase process, negotiating the best possible purchase price, managing and advocating for you during inspections, escrow, title, and closing. We will also advise you on how to make the house even better, including furniture and design, and possible remodel ideas and augmentations where beneficial.
               </p>
               
               <p className="text-lg font-light leading-relaxed mb-8">
@@ -60,13 +67,13 @@ const Buyers = () => {
                 <div className="w-16 h-16 border-4 border-red-500 rounded-full flex items-center justify-center mb-4">
                   <div className="w-8 h-8 bg-red-500 rounded-full"></div>
                 </div>
-                <h3 className="text-2xl font-light tracking-wider mb-2">THE OPPENHEIM GROUP</h3>
+                <h3 className="text-2xl font-light tracking-wider mb-2">THE PREMIUM GROUP</h3>
                 <p className="text-red-500 text-sm font-light tracking-wider">REAL ESTATE</p>
               </div>
               
               <div className="space-y-4 text-sm font-light">
                 <div>
-                  <p className="text-white/80 mb-2">office@ogroup.com</p>
+                  <p className="text-white/80 mb-2">office@premiumgroup.com</p>
                 </div>
                 
                 <div className="space-y-2">
