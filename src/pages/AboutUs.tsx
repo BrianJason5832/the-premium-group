@@ -1,9 +1,35 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useToast } from "@/hooks/use-toast";
 
 const AboutUs = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    toast({
+      title: "Successfully Submitted!",
+      description: "Thank you for your message. We'll get back to you soon.",
+    });
+    // Reset form
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div className="min-h-screen bg-white text-black">
       <Header />
@@ -12,7 +38,7 @@ const AboutUs = () => {
       <section 
         className="relative h-screen flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=2070')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070')`
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -33,13 +59,13 @@ const AboutUs = () => {
           <div className="max-w-6xl mx-auto">
             <div className="mb-16">
               <h1 className="text-8xl md:text-9xl font-light mb-8">THE</h1>
-              <h2 className="text-7xl md:text-8xl font-bold mb-4">OPPENHEIM</h2>
+              <h2 className="text-7xl md:text-8xl font-bold mb-4">PREMIUM</h2>
               <h3 className="text-6xl text-red-500 font-light italic">Group</h3>
             </div>
             
             <div className="max-w-4xl">
               <p className="text-lg font-light leading-relaxed mb-8">
-                The Oppenheim Group is a professional real estate brokerage serving <span className="underline">buyers</span> and <span className="underline">sellers of luxury property in Los Angeles</span>, Orange County, <span className="underline">San Diego</span>, and <span className="underline">Cabo San Lucas, Mexico</span>. The brokerage is composed of a close group of talented Realtors led by the firm's President and Founder, Jason Oppenheim. With more than $3.5B+ in total sales and $500 million in active listings, the firm closes hundreds of deals annually and has brokered many of the region's largest residential sales, including numerous record-breaking transactions. With offices in West Hollywood, Newport, San Diego, and Cabo San Lucas, The Oppenheim Group is the preeminent brokerage in the region, doing tremendous business throughout Southern California.
+                The Premium Group is a professional real estate brokerage serving <span className="underline">buyers</span> and <span className="underline">sellers of luxury property in Los Angeles</span>, Orange County, <span className="underline">San Diego</span>, and <span className="underline">Cabo San Lucas, Mexico</span>. The brokerage is composed of a close group of talented Realtors led by the firm's President and Founder, Jason Premium. With more than $3.5B+ in total sales and $500 million in active listings, the firm closes hundreds of deals annually and has brokered many of the region's largest residential sales, including numerous record-breaking transactions. With offices in West Hollywood, Newport, San Diego, and Cabo San Lucas, The Premium Group is the preeminent brokerage in the region, doing tremendous business throughout Southern California.
               </p>
             </div>
           </div>
@@ -69,7 +95,7 @@ const AboutUs = () => {
               
               <div className="space-y-6">
                 <p className="text-lg font-light leading-relaxed">
-                  Founded in Hollywood by Jacob Stern in 1889 as The Stern Realty Co., The Oppenheim Group represents five generations of real estate development, management and brokerage services in Los Angeles. Jacob Stern, Brett and Jason's great-great-grandfather, was one of the preeminent real estate entrepreneurs of early Los Angeles.
+                  Founded in Hollywood by Jacob Stern in 1889 as The Stern Realty Co., The Premium Group represents five generations of real estate development, management and brokerage services in Los Angeles. Jacob Stern, Brett and Jason's great-great-grandfather, was one of the preeminent real estate entrepreneurs of early Los Angeles.
                 </p>
                 
                 <p className="text-lg font-light leading-relaxed">
@@ -101,30 +127,51 @@ const AboutUs = () => {
             </p>
             
             <div className="max-w-2xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <label className="block text-white text-sm font-light mb-2 tracking-wider text-left">NAME</label>
-                  <input
-                    type="text"
-                    className="w-full bg-transparent border-b border-white/50 py-3 text-white placeholder-white/50 focus:border-red-500 focus:outline-none"
-                  />
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <label className="block text-white text-sm font-light mb-2 tracking-wider text-left">NAME</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-white/50 py-3 text-white placeholder-white/50 focus:border-red-500 focus:outline-none"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white text-sm font-light mb-2 tracking-wider text-left">EMAIL ADDRESS</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-white/50 py-3 text-white placeholder-white/50 focus:border-red-500 focus:outline-none"
+                      required
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-white text-sm font-light mb-2 tracking-wider text-left">EMAIL ADDRESS</label>
-                  <input
-                    type="email"
-                    className="w-full bg-transparent border-b border-white/50 py-3 text-white placeholder-white/50 focus:border-red-500 focus:outline-none"
-                  />
+                
+                <div className="mb-8">
+                  <label className="block text-white text-sm font-light mb-2 tracking-wider text-left">MESSAGE</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full bg-transparent border-b border-white/50 py-3 text-white placeholder-white/50 focus:border-red-500 focus:outline-none resize-none"
+                    required
+                  ></textarea>
                 </div>
-              </div>
-              
-              <div className="mb-8">
-                <label className="block text-white text-sm font-light mb-2 tracking-wider text-left">MESSAGE</label>
-                <textarea
-                  rows={4}
-                  className="w-full bg-transparent border-b border-white/50 py-3 text-white placeholder-white/50 focus:border-red-500 focus:outline-none resize-none"
-                ></textarea>
-              </div>
+                
+                <button
+                  type="submit"
+                  className="px-8 py-3 bg-red-500 text-white hover:bg-red-600 transition-all duration-300"
+                >
+                  <span className="text-sm font-light tracking-wider">SUBMIT</span>
+                </button>
+              </form>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -56,9 +57,11 @@ const Buyers = () => {
                 Please contact us to set up a meeting.
               </p>
               
-              <button className="px-8 py-3 border border-black hover:bg-black hover:text-white transition-all duration-300">
-                <span className="text-sm font-light tracking-wider">CONTACT US</span>
-              </button>
+              <Link to="/contact">
+                <button className="px-8 py-3 border border-black hover:bg-black hover:text-white transition-all duration-300">
+                  <span className="text-sm font-light tracking-wider">CONTACT US</span>
+                </button>
+              </Link>
             </div>
             
             {/* Right side - Contact Info */}

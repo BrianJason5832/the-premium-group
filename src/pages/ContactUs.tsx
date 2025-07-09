@@ -2,8 +2,10 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useToast } from "@/hooks/use-toast";
 
 const ContactUs = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,7 +17,18 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission
+    toast({
+      title: "Successfully Submitted!",
+      description: "Thank you for contacting us. We'll get back to you soon.",
+    });
+    // Reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -150,14 +163,14 @@ const ContactUs = () => {
                 <div className="w-16 h-16 border-4 border-red-500 rounded-full flex items-center justify-center mb-4">
                   <div className="w-8 h-8 bg-red-500 rounded-full"></div>
                 </div>
-                <h3 className="text-2xl font-light tracking-wider mb-2">THE OPPENHEIM GROUP</h3>
+                <h3 className="text-2xl font-light tracking-wider mb-2">THE PREMIUM GROUP</h3>
                 <p className="text-red-500 text-sm font-light tracking-wider">REAL ESTATE</p>
               </div>
               
               <div className="space-y-6 text-sm font-light">
                 <div className="flex items-center space-x-3">
                   <span className="text-white/60">✉</span>
-                  <span>office@ogroup.com</span>
+                  <span>office@premiumgroup.com</span>
                 </div>
                 
                 <div className="space-y-3">

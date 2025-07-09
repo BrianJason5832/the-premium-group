@@ -10,7 +10,7 @@ const Sellers = () => {
       author: "— Partner, O'Melveny & Myers LLP"
     },
     {
-      quote: "As a real estate broker, attorney and licensed contractor, Jason Oppenheim provides unparalleled representation in every real estate transaction. Jason has represented us on multiple purchases and sales...",
+      quote: "As a real estate broker, attorney and licensed contractor, Jason Premium provides unparalleled representation in every real estate transaction. Jason has represented us on multiple purchases and sales...",
       author: "— Dr. Jeffrey Hammoudegh",
       subtitle: "MD, DDS"
     }
@@ -57,14 +57,8 @@ const Sellers = () => {
             </p>
             
             <p className="text-lg font-light leading-relaxed mb-12">
-              The Oppenheim Group is truly a full-service brokerage, and Jason Oppenheim is not just a real estate agent, he's a licensed real estate broker, as well as a licensed and practiced attorney and contractor in the State of California. He and his team are experienced and have a proven track record of success, in not just selling homes, but achieving record-breaking results for their clients.
+              The Premium Group is truly a full-service brokerage, and Jason Premium is not just a real estate agent, he's a licensed real estate broker, as well as a licensed and practiced attorney and contractor in the State of California. He and his team are experienced and have a proven track record of success, in not just selling homes, but achieving record-breaking results for their clients.
             </p>
-            
-            <div className="text-center">
-              <button className="px-8 py-3 border border-black hover:bg-black hover:text-white transition-all duration-300">
-                <span className="text-sm font-light tracking-wider">LIST WITH US</span>
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -104,12 +98,12 @@ const Sellers = () => {
             <div className="w-16 h-16 border-4 border-red-500 rounded-full flex items-center justify-center mb-4 mx-auto">
               <div className="w-8 h-8 bg-red-500 rounded-full"></div>
             </div>
-            <h3 className="text-2xl font-light tracking-wider mb-2">THE OPPENHEIM GROUP</h3>
+            <h3 className="text-2xl font-light tracking-wider mb-2">THE PREMIUM GROUP</h3>
             <p className="text-red-500 text-sm font-light tracking-wider">REAL ESTATE</p>
           </div>
           
           <div className="space-y-4 text-sm font-light">
-            <p>office@ogroup.com</p>
+            <p>office@premiumgroup.com</p>
             <p>CA Broker Lic. # 01983697</p>
             
             <div className="space-y-2">
